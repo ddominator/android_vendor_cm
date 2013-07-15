@@ -159,11 +159,7 @@ PRODUCT_PACKAGES += \
     DSPManager \
     libcyanogen-dsp \
     audio_effects.conf \
-#    CMWallpapers \
-#    Apollo \
-    CMUpdater \
-    CMFileManager \
-    LockClock
+    CMFileManager 
 
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver
