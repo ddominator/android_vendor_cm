@@ -79,6 +79,11 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/cm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
 
+# Add extra APKs
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/app/SunBeam.apk:system/app/SunBeam.apk \
+    vendor/cm/prebuilt/common/app/Gallery2.apk:system/app/Gallery2.apk
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
