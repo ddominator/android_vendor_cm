@@ -159,11 +159,7 @@ PRODUCT_PACKAGES += \
     DSPManager \
     libcyanogen-dsp \
     audio_effects.conf \
-    CMWallpapers \
-    Apollo \
-    CMUpdater \
-    CMFileManager \
-    LockClock
+    CMFileManager 
 
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver
@@ -229,7 +225,7 @@ ifdef CM_BUILDTYPE
     endif
 else
     # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-    CM_BUILDTYPE := UNOFFICIAL
+    CM_BUILDTYPE := ddominator
     CM_EXTRAVERSION :=
 endif
 
