@@ -128,6 +128,7 @@ PRODUCT_COPY_FILES += \
 
 # Add extra APKs
 PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/app/AdAway.apk:system/app/AdAway.apk \
     vendor/cm/prebuilt/common/app/SunBeam.apk:system/app/SunBeam.apk
 
 # This is CM!
@@ -143,7 +144,6 @@ include vendor/cm/config/themes_common.mk
 
 # Required CM packages
 PRODUCT_PACKAGES += \
-    AdAway \
     Camera \
     Development \
     LatinIME \
