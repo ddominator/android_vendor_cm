@@ -169,6 +169,11 @@ PRODUCT_PACKAGES += \
     audio_effects.conf \
     CMFileManager 
 
+# CM Hardware Abstraction Framework
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
+
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver
 
