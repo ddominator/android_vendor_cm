@@ -132,7 +132,7 @@ PRODUCT_COPY_FILES += \
 # Add extra APKs
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/AdAway.apk:system/app/AdAway.apk \
-    vendor/cm/prebuilt/common/app/GalleryGoogle.apk:system/app/GalleryGoogle.apk \
+    vendor/cm/prebuilt/common/app/GalleryGoogle.apk:system/app/Gallery2.apk \
     vendor/cm/prebuilt/common/app/SunBeam.apk:system/app/SunBeam.apk
 
 # This is CM!
