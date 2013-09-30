@@ -145,8 +145,7 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/lib/modules/cifs.ko:system/lib/modules/cifs.ko \
     vendor/cm/prebuilt/common/lib/modules/dhd.ko:system/lib/modules/dhd.ko: \
     vendor/cm/prebuilt/common/lib/modules/evbug.ko:system/lib/modules/evbug.ko \
-    vendor/cm/prebuilt/common/lib/modules/exfat_core.ko:system/lib/modules/exfat_core.ko \
-    vendor/cm/prebuilt/common/lib/modules/exfat_fs.ko:system/lib/modules/exfat_fs.ko \
+    vendor/cm/prebuilt/common/lib/modules/exfat_core:system/lib/modules/exfat_fs.ko \
     vendor/cm/prebuilt/common/lib/modules/frandom.ko:system/lib/modules/frandom.ko \
     vendor/cm/prebuilt/common/lib/modules/gspca_main.ko:system/lib/modules/gspca_main.ko \
     vendor/cm/prebuilt/common/lib/modules/mcdrvmodule.ko:system/lib/modules/mcdrvmodule.ko \
