@@ -138,11 +138,12 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
     vendor/cm/prebuilt/common/lib/liblightcycle.so:system/lib/liblightcycle.so
 
-# Add Kernel Modules
+# Add Chronic Kernel Support
 PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/etc/chronic-config.sh:system/etc/chronic-config.sh \
     vendor/cm/prebuilt/common/lib/modules/ansi_cprng.ko:system/lib/modules/ansi_cprng.ko \
+    vendor/cm/prebuilt/common/lib/modules/cifs.ko:system/lib/modules/cifs.ko \
     vendor/cm/prebuilt/common/lib/modules/dhd.ko:system/lib/modules/dhd.ko: \
-    vendor/cm/prebuilt/common/lib/modules/dma_test.ko:system/lib/modules/dma_test.ko \
     vendor/cm/prebuilt/common/lib/modules/evbug.ko:system/lib/modules/evbug.ko \
     vendor/cm/prebuilt/common/lib/modules/exfat_core.ko:system/lib/modules/exfat_core.ko \
     vendor/cm/prebuilt/common/lib/modules/exfat_fs.ko:system/lib/modules/exfat_fs.ko \
@@ -150,7 +151,6 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/lib/modules/gspca_main.ko:system/lib/modules/gspca_main.ko \
     vendor/cm/prebuilt/common/lib/modules/mcdrvmodule.ko:system/lib/modules/mcdrvmodule.ko \
     vendor/cm/prebuilt/common/lib/modules/mckernelapi.ko:system/lib/modules/mckernelapi.ko \
-    vendor/cm/prebuilt/common/lib/modules/mmc_test.ko:system/lib/modules/mmc_test.ko \
     vendor/cm/prebuilt/common/lib/modules/msm-buspm-dev.ko:system/lib/modules/msm-buspm-dev.ko \
     vendor/cm/prebuilt/common/lib/modules/qce40.ko:system/lib/modules/qce40.ko \
     vendor/cm/prebuilt/common/lib/modules/qcedev.ko:system/lib/modules/qcedev.ko \
