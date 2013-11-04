@@ -127,10 +127,11 @@ PRODUCT_COPY_FILES += \
 # Add extra APKs and Photosphere
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/AdAway.apk:system/app/AdAway.apk \
-    vendor/cm/prebuilt/common/app/GalleryGoogle.apk:system/app/Gallery2.apk \
-    vendor/cm/prebuilt/common/lib/libjni_filtershow_filters.so:system/lib/libjni_filtershow_filters.so \
-    vendor/cm/prebuilt/common/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
-    vendor/cm/prebuilt/common/lib/liblightcycle.so:system/lib/liblightcycle.so
+    vendor/cm/prebuilt/common/app/SunBeam.apk:system/app/SunBeam.apk 
+#    vendor/cm/prebuilt/common/app/GalleryGoogle.apk:system/app/Gallery2.apk \
+#    vendor/cm/prebuilt/common/lib/libjni_filtershow_filters.so:system/lib/libjni_filtershow_filters.so \
+#    vendor/cm/prebuilt/common/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
+#    vendor/cm/prebuilt/common/lib/liblightcycle.so:system/lib/liblightcycle.so
 
 # This is CM!
 PRODUCT_COPY_FILES += \
