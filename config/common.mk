@@ -61,6 +61,9 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-google
+else
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -132,10 +135,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/AdAway.apk:system/app/AdAway.apk \
     vendor/cm/prebuilt/common/app/SunBeam.apk:system/app/SunBeam.apk 
-#    vendor/cm/prebuilt/common/app/GalleryGoogle.apk:system/app/Gallery2.apk \
-#    vendor/cm/prebuilt/common/lib/libjni_filtershow_filters.so:system/lib/libjni_filtershow_filters.so \
-#    vendor/cm/prebuilt/common/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
-#    vendor/cm/prebuilt/common/lib/liblightcycle.so:system/lib/liblightcycle.so
 
 # This is CM!
 PRODUCT_COPY_FILES += \
@@ -216,7 +215,6 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_PACKAGES += \
     procmem \
     procrank \
-    CMUpdater \
     Superuser \
     su
 
@@ -228,9 +226,6 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=1
 else
-
-PRODUCT_PACKAGES += \
-    CMFota
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
@@ -290,7 +285,15 @@ else
 endif
 
 ifeq ($(CM_BUILDTYPE), RELEASE)
-    CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(CM_BUILD)
+    ifndef TARGET_VENDOR_RELEASE_BUILD_ID
+        CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(CM_BUILD)
+    else
+        ifeq ($(TARGET_BUILD_VARIANT),user)
+            CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(TARGET_VENDOR_RELEASE_BUILD_ID)-$(CM_BUILD)
+        else
+            CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(CM_BUILD)
+        endif
+    endif
 else
     ifeq ($(PRODUCT_VERSION_MINOR),0)
         CM_VERSION := $(PRODUCT_VERSION_MAJOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)$(CM_EXTRAVERSION)-$(CM_BUILD)
