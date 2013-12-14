@@ -162,7 +162,8 @@ PRODUCT_PACKAGES += \
     libcyanogen-dsp \
     audio_effects.conf \
     CMFileManager \
-    CMAccount
+    CMAccount \
+    WhisperPush
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
