@@ -115,6 +115,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
 
+# Add extra APKS	
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/app/AdAway.apk:system/app/AdAway.apk \
+    vendor/cm/prebuilt/common/app/SunBeam.apk:system/app/SunBeam.apk 
+
 # This is CM!
 PRODUCT_COPY_FILES += \
     vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
@@ -144,12 +149,7 @@ PRODUCT_PACKAGES += \
     DSPManager \
     libcyanogen-dsp \
     audio_effects.conf \
-    CMWallpapers \
-    Apollo \
     CMFileManager \
-    LockClock \
-    CMUpdater \
-    CMFota \
     CMAccount
 
 # CM Hardware Abstraction Framework
@@ -268,7 +268,7 @@ ifdef CM_BUILDTYPE
     endif
 else
     # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-    CM_BUILDTYPE := UNOFFICIAL
+    CM_BUILDTYPE := ddominator	
     CM_EXTRAVERSION :=
 endif
 
