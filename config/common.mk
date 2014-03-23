@@ -262,7 +262,7 @@ else
     CM_EXTRAVERSION :=
 endif
 
-ifeq ($(CM_BUILDTYPE), ddominator)
+ifeq ($(CM_BUILDTYPE), UNOFFICIAL)
     ifneq ($(TARGET_UNOFFICIAL_BUILD_ID),)
         CM_EXTRAVERSION := -$(TARGET_UNOFFICIAL_BUILD_ID)
     endif
@@ -297,7 +297,7 @@ CM_DISPLAY_VERSION := $(CM_VERSION)
 
 ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),)
 ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),build/target/product/security/testkey)
-  ifneq ($(CM_BUILDTYPE), ddominator)
+  ifneq ($(CM_BUILDTYPE), UNOFFICIAL)
     ifndef TARGET_VENDOR_RELEASE_BUILD_ID
       ifneq ($(CM_EXTRAVERSION),)
         # Remove leading dash from CM_EXTRAVERSION
